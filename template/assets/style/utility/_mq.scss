@@ -1,0 +1,35 @@
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+/**
+  * SASS優化響應式斷點管理
+  * @link http://zqianduan.com/2016/03/13/sass-responsive-breakpoints/
+  * @link https://www.sitepoint.com/managing-responsive-breakpoints-sass/
+  */
+// $breakpoints: (
+//   'sm'   : ( min-width : 767px ),
+//   'md'   : ( min-width : 992px ),
+//   'lg'   : ( min-width : 1200px ),
+//   'xl'   : ( min-width : 1440px ),
+//   'xxl'  : ( min-width : 1920px )
+// );
+
+@mixin mq($name) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $name) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoints}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+
+

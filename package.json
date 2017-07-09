@@ -1,0 +1,21 @@
+{
+  "name": "nuxt-template",
+  "version": "1.0.0",
+  "description": "customize template for nuxt",
+  "main": "meta.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/asamoon/nuxt-tpl.git"
+  },
+  "keywords": [
+    "vue",
+    "nuxt",
+    "template"
+  ],
+  "author": "asamoon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/asamoon/nuxt-tpl/issues"
+  },
+  "homepage": "https://github.com/asamoon/nuxt-tpl#readme"
+}

@@ -1,0 +1,30 @@
+// Utility
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+/* Clear a float with .clearfix
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+%clearfix {
+  @include clear-fix;
+}
+
+
+/* 隱藏文字
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+%hide-text {
+  @include hide-text;
+}
+
+
+/* 隱藏元素
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+%invisible{visibility: hidden; width:0; height: 0;}
+
+
+/* 溢出文字用省略號點代替
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+%textOverflow{
+	@include text-overflow;
+}
+
+
+%title{font-family: 'Ryumin Medium KL', 游明朝, YuMincho, 'ヒラギノ明朝 Pr6 W6', 'Hiragino Mincho Pro', HGS明朝E, メイリオ, 'ＭＳ Ｐ明朝', 'MS PMincho', Meiryo, serif;}
+

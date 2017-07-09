@@ -1,0 +1,28 @@
+//=============================================================
+// color @ 14/5/12
+//=============================================================
+
+/* 常用漸層色 */
+%type_blue{background: #4c9cf4; background-image: radial-gradient(#4c9cf4, #1f64f4); color: #fff;}
+%type_blue_light{background: #5086f6; background-image: radial-gradient(#90c0f4, #1f64f4); color: #fff;}
+%type_deepBule{background:#104672; background-image: linear-gradient(#20547c, #0e222d); color: #fff;}
+
+%type_iron{background: #ccc; background-image: linear-gradient(#fff, #ccc); color: #000; text-shadow: 0 1px 0 #fff;}
+%type_white{background: #fff; background-image: linear-gradient(#fff, #f2f2f2);}
+%type_black{background: black; background-image: radial-gradient(#555, #000); color: #fff; }
+%type_dark{background: #525252; background-image: radial-gradient(#525252, #222); color: #fff;}
+%type_yellow{background:#fffcd0; background-image: linear-gradient(#fffcd0, #fff877);}
+%type_grow{background: #222; background-image: linear-gradient(#888 0, #333 45%, #000 50%, #222);}
+
+%type_fb{background:#3b5998; background-image: radial-gradient(#8a9df6, #253971);}
+%type_fb_light{background:#4c70ba; background-image: radial-gradient(#adbbff, #253971);}
+
+%type_green{background:#7abc17; background-image: radial-gradient(#7abc17, #363); color: #fff;}
+%type_green_light{background:#55aa55; background-image: radial-gradient(#acea4f, #363); color: #fff;}
+
+%type_red{background:#ff0000; background-image: radial-gradient(#ff0000, #a90303); color: #fff;}
+%type_orange{background:#ff6c00; background-image: radial-gradient(#ff6c00, #cf5800); color: #fff;}
+
+
+
+

@@ -1,0 +1,81 @@
+//
+// tooltip
+// -----------------------------------------
+
+$tooltip-bg:             fade-out(#111, .1);
+$tooltip-base-size:      10px;
+$tooltip-arrow-height:   6px;
+
+
+.tooltip {
+  position: relative;
+  display: block !important;
+  padding: 4px;
+  z-index: 1000;
+
+  .tooltip-inner {
+    background: $tooltip-bg;
+    color: white;
+    border-radius: .3rem;
+    padding: 3px 10px;
+    font-size: 1.6rem;
+    line-height: 1.4em;
+  }
+
+  .tooltip-arrow{
+    display: block !important;
+    position: absolute;
+    z-index: 10;
+  }
+
+ &[x-placement="top"] {
+    .tooltip-arrow{
+      @include svg-arrow($tooltip-bg, 'up');
+      top: 100%;
+      left: 50%;
+      margin-top: -4px;
+      transform: translate(-50%, 0);
+    }
+  }
+  &[x-placement="bottom"] {
+    .tooltip-arrow{
+      @include svg-arrow($tooltip-bg, 'down');
+      bottom: 100%;
+      left: 50%;
+      margin-bottom: -4px;
+      transform: translate(-50%, 0);
+    }
+  }
+  &[x-placement="left"] {
+    margin-right: 5px;
+    .tooltip-arrow{
+      @include svg-arrow($tooltip-bg, 'left');
+      left: 100%;
+      top: 50%;
+      margin-left: -4px;
+      transform: translate(0, -50%);
+    }
+  }
+  &[x-placement="right"] {
+    margin-left: 5px;
+    .tooltip-arrow{
+      @include svg-arrow($tooltip-bg, 'right');
+      right: 100%;
+      top: 50%;
+      margin-right: -4px;
+      transform: translate(0, -50%);
+    }
+  }
+
+  &[aria-hidden='true'] {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .15s, visibility .15s;
+  }
+
+  &[aria-hidden='false'] {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .15s;
+  }
+}

@@ -1,0 +1,33 @@
+// Header
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+
+/* site-header
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.site-header {
+	position: relative;
+	margin: 0 auto;
+	height: 48px;
+	overflow: hidden;
+	&__inner {
+		position: relative;
+		transition: all 250ms; transition-delay: 100ms;
+	}
+}
+.site-logo {
+	font-family: $font-primary;
+	position: relative;
+	font-size: 3rem;
+
+	&__link {display: block;}
+	// span {}
+}
+
+.mainNav{
+	ul {
+		list-style: none;
+	}
+	&__subnav {
+			display: none;
+		}
+}

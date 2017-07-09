@@ -1,0 +1,128 @@
+/*
+* @Author: asamoon
+* @Date:   2016-10-29 21:49:32
+* @Last Modified by:   asamoon
+* @Last Modified time: 2017-04-28 10:18:32
+*/
+@import "math";
+
+/* 畫圓
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@mixin circle($r) {
+	border-radius: 50%;
+	width: #{$r};
+	height: #{$r};
+	}
+
+
+/* 溢出文字用省略號點代替
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+%textOverflow {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	}
+
+
+/* Reaina Images
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@mixin imgRetina($img-1x, $img-2x, $width-1x, $height-1x){
+	background-image: url("#{$img-1x}");
+	@media
+	only screen and (-webkit-min-devic-pixel-ratio : 2),
+	only screen and (min-moz-devic-pixel-ratio     : 2),
+	only screen and (-o-min-devic-pixel-ratio      : 2),
+	only screen and (min-devic-pixel-ratio         : 2),
+	only screen and (min-resolution                : 192dpi),
+	only screen and (min-resolution                : 2dppx){
+		background-image: url("#{$img-2x}");
+		background-size: #{$width-1x} #{$height-1x};
+		}
+	}
+
+
+/* 尺寸快設
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@mixin size($w, $h){
+	width: #{$w};
+	height: #{$w};
+	}
+
+
+/* 正方形
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@mixin square($size){
+	@include size($size, $size);
+	}
+
+
+/* 置中
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@mixin center() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* 垂直置中
+ * http://www.oxxostudio.tw/articles/201502/css-vertical-align-7methods.html
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@mixin center-child{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+
+/* Clearfix
+ * http://nicolasgallagher.com/micro-clearfix-hack/
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+/* 傾斜 Tilted Angles
+ * https://www.sitepoint.com/tilted-angles-in-sass/
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@function get-tilted-height($angle) {
+  $a: (100% / 1%);
+  $A: (90deg - $angle);
+  $c: ($a / sin($A));
+  $b: sqrt(pow($c, 2) - pow($a, 2));
+	// @debug $b;
+  @return (abs($b) * 1%);
+}
+@mixin tilted($angle, $color, $position: 'top', $pseudo: 'before') {
+  $height: get-tilted-height($angle);
+
+  position: relative;
+  background-color: $color;
+
+  &::#{$pseudo} {
+    content: '';
+    padding-top: $height;
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    @if ($position == 'top') {
+      bottom: 100%;
+      background-image: linear-gradient($angle, $color 50%, transparent 50%);
+    } @else {
+      top: 100%;
+      background-image: linear-gradient($angle, transparent 50%, $color 50%);
+    }
+  }
+}
+
+
+
+

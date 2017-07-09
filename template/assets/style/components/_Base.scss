@@ -1,0 +1,119 @@
+/* Base
+ ––––––––––––––––––––––––––––––––––––––––––––––––––
+ The base font-size is set at 62.5% for having the convenience
+ of sizing rems in a way that is similar to using px. 1.8rem=18px
+ –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+html {
+	box-sizing: border-box;
+	height: 100%;
+	font-size: 62.5%;
+	/* 防止 iOS 方向變化後的文字大小調整，​​禁止用戶縮放。 */
+	// text-size-adjust: 100%;
+}
+
+body {
+	background-color: $color-init;
+	min-height: 100%;
+  color: $color-font;
+	font-family: $font-init;
+  font-size: $size-font-init;
+  font-weight: 300;
+  letter-spacing: .01em;
+  line-height: 1.6;
+	/* Improve readability */
+	text-shadow: 0 0 1px transparent;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@media all and (max-device-width : 480px) {
+	body { text-rendering: optimizeSpeed; }
+}
+
+
+// Box Sizing FTW
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+//::-moz-selection{background: $selectionBg; color: $selectionText; text-shadow: none;}
+//::selection{background: $selectionBg; color: $selectionText; text-shadow: none;}
+
+
+/* Embedded content (Improve/Fix in IE7/9)
+-------------------------------------------------------------*/
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+svg:not(:root) { overflow: hidden; }
+
+
+/* js 停用警告
+-------------------------------------------------------------*/
+.notifyBox{position: relative; background: #fdf2a5; background: linear-gradient(#fef9d7, #fcea73);
+	padding: 1rem 1.5rem;
+	text-align: left;
+	&__title {margin-bottom: .5rem; color: #555; font-size: 2.4rem;}
+	&__content {color: #8a6d3b; font-size: 1.4rem;}
+}
+
+
+/* old-browser-warning
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.old-browser-warning{
+	background-color: $color-init;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	@include size(100%, 100%);
+
+	&__inner {
+		position: relative;
+		@include size(95%, 100%);
+		margin: 0 auto;
+		padding: 20px;
+		color: #555;
+		font-size: 17px;
+	}
+		h2 {font-family: $font-primary; margin-bottom: .5em; line-height: 1em; color: #ccc;}
+		&__btnBox {margin: 1em auto; text-align: center;}
+
+	@include mq(md) {
+		&__inner {font-size: 27px;}
+	}
+
+	@include mq(lg) {
+		&__inner {@include size(55%, 100%); margin: 0 auto;}
+			&__btnBox {text-align: left;}
+	}
+}
+
+
+/* 行動裝置
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ /**
+  * Mobile screen resizing
+  * @link http://dev.w3.org/csswg/css-device-adapt/
+  */
+@-webkit-viewport { width: device-width; zoom: 1.0; }
+@-moz-viewport    { width: device-width; zoom: 1.0; }
+@-ms-viewport     { width: device-width; zoom: 1.0; }
+@-o-viewport      { width: device-width; zoom: 1.0; }
+@viewport         { width: device-width; zoom: 1.0; }
+
+/**
+ * Remove the tap delay in webkit
+ * @link https://medium.com/@adactio/delay-a9df9edceef3#.7dmbl3xow
+ */
+a,
+button,
+input,
+select,
+textarea,
+label,
+summary {
+	touch-action: manipulation;
+}

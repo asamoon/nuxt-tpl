@@ -1,0 +1,10 @@
+// Link
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+a {
+  color: $color-brand;
+  text-decoration: none;
+  &:hover {
+    color: lighten($color-brand, 6);
+  }
+}
