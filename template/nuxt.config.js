@@ -26,7 +26,7 @@ module.exports = {
       // Color the status bar on mobile devices
       { name: 'theme-color', content: '#00A2E4' }
       // Facebook
-      // { property: 'fb:app_id', content: '241039752194'}
+      // { property: 'fb:app_id', content: ''}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
