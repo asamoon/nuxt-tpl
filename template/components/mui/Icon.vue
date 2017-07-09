@@ -4,7 +4,7 @@
       <use xmlns:xlink="http://www.w3.org/1999/xlink" :xlink:href="'#' + icon"></use>
     </svg>
 
-    <slot v-else>{{ removeText ? null : icon }}</slot>
+    <slot v-else>{{ icon }}</slot>
   </i>
 </template>
 
@@ -19,10 +19,6 @@ export default {
       default: 'material-icons'
     },
     ariaLabel: String,
-    removeText: {
-      type: Boolean,
-      default: false
-    },
     useSvg: {
       type: Boolean,
       default: false
