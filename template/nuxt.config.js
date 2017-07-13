@@ -59,7 +59,8 @@ module.exports = {
   */
   build: {
     postcss: [
-      require('postcss-cssnext')()
+      require('postcss-cssnext')(),
+      require('cssnano')()
     ],
     vendor: ['axios'],
     /*
