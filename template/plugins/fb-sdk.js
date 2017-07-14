@@ -2,7 +2,7 @@
 * @Author: asamoon
 * @Date:   2017-05-25 17:22:47
 * @Last Modified by:   asamoon
-* @Last Modified time: 2017-07-14 14:02:35
+* @Last Modified time: 2017-07-14 16:49:36
 */
 /*
 ** 只在生成模式的客户端中使用
@@ -19,8 +19,7 @@
 
 window.fbAsyncInit = () => {
   window.FB.init({
-    appId: '241039752194',
-    // appId: '1716665115018255',
+    appId: '',
     cookie: true,
     xfbml: true,
     version: 'v2.8'
