@@ -2,58 +2,62 @@
 * @Author: asamoon
 * @Date:   2017-05-19 12:00:08
 * @Last Modified by:   asamoon
-* @Last Modified time: 2017-05-25 18:54:25
+* @Last Modified time: 2018-02-12 14:00:02
 */
 
 
 /* dark
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-$color-dark         : #222;
+$color-dark         : #232323;
 $color-dark-10      : lighten($color-dark, 10%);
 $color-dark-20      : lighten($color-dark, 20%);
 $color-dark-30      : lighten($color-dark, 30%);
-$color-gray: #a1a1a1;
 
 /* brand
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-// $color-brand        : $dqBlue;
-$color-brand        : #ff4823;
+$color-brand        : $dqBlue;
+// $color-brand        : #ff4823;
 $color-brand-10     : lighten($color-brand, 10%);
 $color-brand-20     : lighten($color-brand, 20%);
 $color-brand-30     : lighten($color-brand, 30%);
-
 
 // $code_highlight_theme       : github;
 // $override_code_highlight_bg : #F9FAFC;
 
 $color-info       : #0088cc; // Blue
 $color-success    : #377f31; // Green
+$color-highlight  : #dba909; // Yellow
 
 $color-danger     : #880e14; // Red
-$color-danger-10 : lighten($color-danger, 10%);
-$color-danger-20 : lighten($color-danger, 20%);
-$color-danger-30 : lighten($color-danger, 30%);
+$color-danger-10  : lighten($color-danger, 10%);
+$color-danger-20  : lighten($color-danger, 20%);
+$color-danger-30  : lighten($color-danger, 30%);
 
-$color-warning    : #dba909; // Yellow
+$color-warning    : $orange; // Orange
 $color-warning-10 : lighten($color-warning, 10%);
 $color-warning-20 : lighten($color-warning, 20%);
 $color-warning-30 : lighten($color-warning, 30%);
 
 $color-code       : #dd1144;
+$color-code-10    : lighten($color-code, 10%);
+$color-code-20    : lighten($color-code, 20%);
+$color-code-30    : lighten($color-code, 30%);
 
 
 /* Colors Set
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+$color-init         : #f1f2f1;
 $color-bg           : #f5f6f7;
 // ecedef
-$color-init         : #f1f2f1;
 
+$color-divider      : #e0e0e0;
 $color-border       : #d1d1d1;
 $color-blod_border  : #a1a1a1;
-$color-highlight    : $yellow;
-// $color-highlight    : #b4e7f8;
+// $color-gray: #a1a1a1;
 
-$color-font         : rgba(#000, .87);
-$color-lighten_font : rgba(#000, .52);
+$color-font      : rgba(#000, .87);
+$color-info      : rgba(#000, .76);
+$color-sub-info  : rgba(#000, .65);
+$color-placehold : rgba(#000, .52);
 
 

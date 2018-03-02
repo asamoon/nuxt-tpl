@@ -78,4 +78,24 @@ $tooltip-arrow-height:   6px;
     opacity: 1;
     transition: opacity .15s;
   }
+
+/* popover
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+  &.popover {
+    .popover-inner {
+      // background: $color;
+      // color: black;
+      padding: 24px;
+      border-radius: 5px;
+      box-shadow: 0 5px 30px rgba(black, .1);
+    }
+
+    .popover-arrow {
+      // border-color: $color;
+    }
+  }
+  &-popover {
+    display: inline-block;
+  }
+
 }

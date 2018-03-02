@@ -1,0 +1,168 @@
+// Form
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+textarea,
+select {
+  position: relative;
+  display: inline-block;
+  appearance: none; // Removes awkward default styles on some inputs for iOS
+  background-color: transparent;
+  padding: .5rem;
+  border-bottom: 1px solid $color-border;
+  // border-radius: .3rem;
+  box-shadow: none;
+  max-width: 100%;
+  transition: all .25s ease; transition-delay: .1s;
+
+  &:focus {
+    outline: 0;
+    border-bottom: 1px solid $color-brand;
+  }
+  &.is--disabled {
+    color: #888;
+  }
+  &.align--right {
+    text-align: right;
+  }
+}
+
+label,
+legend {
+  font-weight: 700;
+}
+
+fieldset {
+  border-width: 0;
+  border-top: 1px solid $color-sub-info;
+  padding: 5px 0 0 0;
+  legend {
+    padding: 0 10px;
+    text-align: center;
+    color: $color-sub-info;
+    margin-bottom: .5rem;
+  }
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  display: inline;
+}
+
+textarea {
+  width: 100%;
+  resize : none;
+}
+
+// .is--inline {
+//   display: inline-block;
+//   width: inherit!important;
+// }
+
+::placeholder { /* Chrome/Opera/Safari */
+  color: $color-placehold;
+}
+
+
+/* vform
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.vform {
+  &__box {
+    padding-bottom: 3rem;
+    & > div {
+      margin: 3rem 1rem 0 1rem;
+    }
+    label, span {
+      display: inline-block;
+      padding: 0 1rem;
+    }
+    label {
+      width: 100%;
+      // &.inline
+    }
+    input[type="radio"] {
+      visibility:hidden;
+      &:checked + label {
+        @extend .btn--brand;
+      }
+    }
+    input[type='text'] , textarea {
+      display: block;
+      margin: 0;
+      padding: 0 1.2rem;
+      &:focus {
+        outline: none;
+      }
+    }
+    // 驗證失敗
+    input[aria-invalid='true'], textarea[aria-invalid='true'] {
+      background: $yellow;
+      // padding: 0 .5rem;
+    }
+    // 驗證成功
+    input[aria-invalid='false'], textarea[aria-invalid='false'] {
+      background: transparent;
+    }
+  }
+}
+
+
+/* help
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.help {
+  margin-left: .3rem;
+  font-size: 1.4rem;
+  i {
+    position: relative;
+    top: -2px;
+    margin-right: .3rem;
+    font-size: 1.4rem;
+  }
+}
+
+
+/* is
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.is {
+  &--hints{
+    color: $color-sub-info;
+    i {
+      color: $color-sub-info;
+    }
+  }
+  &--danger{
+    color: $color-code;
+    i {
+      color: $color-code-10;
+    }
+  }
+  &--warning{
+    color: $color-warning;
+    i {
+      color: $color-warning-10;
+    }
+  }
+}
+
+
+
+@keyframes anim-1 {
+  50% {
+    opacity: 0;
+    transform: translate3d(1em, 0, 0);
+  }
+  51% {
+    opacity: 0;
+    transform: translate3d(-1em, -40%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, -40%, 0);
+  }
+}

@@ -1,10 +1,11 @@
 <template>
-  <i class="mui-icon" :class="[iconSet, icon]" :aria-label="ariaLabel">
+  <!-- <i class="mui-icon" :class="[iconSet, icon]" :aria-label="ariaLabel" role="presentation"> -->
+  <i class="mui-icon" :class="[iconSet, icon]" aria-hidden="true">
     <svg class="mui-icon__svg" v-if="useSvg">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" :xlink:href="'#' + icon"></use>
     </svg>
 
-    <slot v-else>{{ icon }}</slot>
+    <slot v-if="!removeText" role="presentation" />
   </i>
 </template>
 
@@ -19,6 +20,10 @@ export default {
       default: 'material-icons'
     },
     ariaLabel: String,
+    removeText: {
+      type: Boolean,
+      default: false
+    },
     useSvg: {
       type: Boolean,
       default: false

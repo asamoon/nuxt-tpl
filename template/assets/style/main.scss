@@ -3,7 +3,7 @@
 * @Author: asamoon
 * @Date:   2017-02-09 14:46:23
 * @Last Modified by:   asamoon
-* @Last Modified time: 2017-07-10 02:51:12
+* @Last Modified time: 2018-02-08 18:04:44
 */
 
 /* 自定義設定 & 變數
@@ -16,32 +16,31 @@
 @import "utility/mixin/mixin";
 @import "utility/utility";
 @import "utility/mq";
-@import "utility/color";
 // CSS reset
-// @import "utility/ress";
+@import "utility/ress";
 // 實用工具
 // @import "utility/debug";
 
-/* 常用結構組件 [components/]
+
+/* 常用結構組件 [elements/]
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-@import "components/Base";
-// @import "components/Blockquote";
-@import "components/Button";
-// @import "components/Code";
-// @import "components/Form";
-// @import "components/Grid";
-@import "components/Link";
-@import "components/List";
-// @import "components/Misc";
-// @import "components/Spacing";
-// @import "components/Table";
-// @import "components/Time";
-// @import "components/Typography";
+@import "elements/Base";
+@import "elements/Blockquote";
+@import "elements/Button";
+// @import "elements/Code";
+@import "elements/Form";
+// @import "elements/Grid";
+@import "elements/Link";
+@import "elements/List";
+// @import "elements/Divider";
+@import "elements/Spacing";
+// @import "elements/Table";
+// @import "elements/Time";
+// @import "elements/Typography";
 
 
 /* 頁面排版 [layout/]
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-@import "partials/Form";
 @import "layout/typo";
 
 
@@ -54,6 +53,5 @@
 /* plugin [vendor/]
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @import "vendor/animate";
-// @import "vendor/font-awesome";
-// @import "vendor/v-tooltip";
+@import "vendor/v-tooltip";
 

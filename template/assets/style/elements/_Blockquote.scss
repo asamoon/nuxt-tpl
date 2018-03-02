@@ -1,0 +1,46 @@
+// Blockquote
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+
+blockquote {
+  position: relative;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 1rem 2rem;
+  font-style: nonmal;
+
+  &:before {
+    position: absolute;
+    top: -2rem;
+    left: -3.2rem;
+    content: '「';
+    font-size: 6rem;
+    color: #bbb;
+  }
+
+  p {
+    position: relative;
+    margin-bottom: 0;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  & *:nth-last-child(2):after {
+    position: absolute;
+    margin-left: .5rem;
+    bottom: -1rem;
+    content: '」';
+    font-size: 3rem;
+    color: #aaa;
+  }
+  cite{
+    display: block;
+    padding-top: 1rem;
+    font-style: normal;
+    color: $color-sub-info;
+    &:before {
+      content: '──　'
+    }
+  }
+  & *:last-child {
+    margin: 0;
+  }
+}

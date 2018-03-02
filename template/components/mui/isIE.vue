@@ -1,5 +1,5 @@
 <template>
-<div class="old-browser-warning" v-if="isTooOldVersion">
+<div class="old-browser-warning" v-if="isOldVersion">
   <div class="old-browser-warning__inner">
     <h2>FOR A FASTER, BETTER, AND SAFER WEB EXPERIENCE, KEEP YOUR BROWSER UP TO DATE.</h2>
     <p>親愛的用戶你好：</p>
@@ -9,11 +9,12 @@
       <a class="btn-o btn-large" href="http://www.whatbrowser.org/intl/zh-TW/" target="_blank">升級瀏覽器&nbsp;&#10132;</a>
     </div>
   </div>
-</div><!-- Old Browser Warning -->
+</div><!-- ======================== Old Browser Warning end ======================== -->
 </template>
 
 <script>
 export default {
+  name: 'mui-is-ie',
   props: {
     blockedVersion: {
       type: String,
@@ -22,7 +23,7 @@ export default {
   },
   data () {
     return {
-      isTooOldVersion: false
+      isOldVersion: false
     }
   },
   mounted () {
@@ -34,7 +35,7 @@ export default {
 
     // 檢查版本號是否受限制
     if (+currVersion <= +this.blockedVersion) {
-      this.isTooOldVersion = true
+      this.isOldVersion = true
     }
   },
   methods: {

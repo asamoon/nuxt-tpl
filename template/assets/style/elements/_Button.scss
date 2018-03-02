@@ -1,0 +1,256 @@
+// btn
+// ––––––––––––––––––––––––––––––––––––––––––––––––––
+$radius: .35rem;
+
+.btn, .btnGroup {
+  // background-color: transparent;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: $radius;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 400;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  min-height: 36px;
+  color: #fff;
+  // min-width: rem-calc(80px);
+  // overflow: hidden;
+  touch-action: manipulation; // IE
+  transition: all 150ms; transition-delay: 100ms;
+
+  // Remove the Firefox dotted outline
+  &::-moz-focus-inner {
+    border: 0;
+  }
+}
+
+.btn {
+  &.btn--o {
+    background-color: transparent;
+    border-color: $color-blod_border;
+    color: $color-info;
+  }
+  &.btn--none {
+    background-color: transparent;
+    border: 0;
+    color: $color-font;
+  }
+  &.is--disabled,
+  &[disabled] {
+    // cursor: default;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+
+  &__content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative; // IE: prevents shifting when the button is pressed
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+  i {
+    position: relative;
+    top: -2px;
+    line-height: 1.35em;
+  }
+
+  // ==============================
+  // size
+  // ==============================
+  $btn-sm: 1.4rem;
+  $btn-md: 1.6rem;
+  $btn-lg: 2.3rem;
+  $btn-xl: 3.8rem;
+
+
+  &, &--md {
+    padding: 0 1rem;
+    font-size: $btn-md;
+    line-height: 36px;
+    // line-height: 2.3rem;
+  }
+  &--ss {
+    padding: 0 .5rem;
+    border-radius: .3rem;
+    min-height: 1.5em !important;
+    height: 1.5em;
+    line-height: 1.5em;
+    font-size: 1.3rem;
+  }
+  &--sm {
+    padding: 0 .5rem;
+    font-size: $btn-sm;
+    height: 1.8rem;
+    line-height: 1rem;
+  }
+  &--lg {
+    padding: .5rem $btn-lg;
+    font-size: $btn-lg;
+    line-height: $btn-lg;
+  }
+  &--xl {
+    padding: .7rem $btn-xl;
+    font-size: $btn-xl;
+    line-height: $btn-xl;
+  }
+  &--full {
+    width: 100%;
+    padding: .5rem 1rem;
+    font-size: 1.8rem;
+  }
+
+
+
+
+  // ==============================
+  // color
+  // ==============================
+  &, &.curr, .btnGroup &.curr {
+    // background-color: rgba($color-brand, .8);
+    background-color: $color-brand-10;
+    border: 1px solid $color-brand-10;
+    color: #fff;
+
+    &:hover:not(.is--disabled) {
+      background-color: lighten($color-brand, 15%);
+      // box-shadow: 0 10px 30px rgba($color-brand, .5);
+    }
+  }
+  &.curr, .btnGroup &.curr {
+    font-weight: 700;
+  }
+  &--brand {
+    color: $color-brand;
+  }
+  &.btn--o:hover {
+    background-color: transparent;
+    border-color: lighten($color-brand, 25%);
+    color: $color-brand;
+  }
+  &.btn--none:hover {
+    background-color: $color-border;
+  }
+
+  // Facebook
+  &--facebook {
+    background-color: $fbC;
+    border-color: rgba($fbC, .6);
+
+    &:hover:not(.is--disabled) {
+      background-color: darken($fbC, 10%);
+      box-shadow: 0 10px 30px rgba($fbC, .5);
+    }
+  }
+  // Google
+  &--google {
+    background-color: $gpC;
+    border-color: rgba($gpC, .6);
+
+    &:hover:not(.is--disabled) {
+      background-color: lighten($gpC, 5%);
+      box-shadow: 0 10px 30px rgba($gpC, .5);
+    }
+  }
+  // line
+  &--line {
+    background-color: $liC;
+    border-color: rgba($liC, .6);
+
+    &:hover:not(.is--disabled) {
+      background-color: lighten($liC, 5%);
+      box-shadow: 0 10px 30px rgba($liC, .5);
+    }
+  }
+
+
+// ==============================
+// withIcon
+// ==============================
+  &--withIcon {
+    i {
+      display: inline-flex;
+      @include square(1.8rem);
+    }
+    svg {
+      fill: #fff;
+    }
+    & > span {
+      display: inline-block;
+      margin-left: .5rem;
+      white-space: nowrap
+    }
+  }
+
+}
+
+
+
+// ==============================
+// Bar
+// ==============================
+.btnBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+
+  &--left {
+    justify-content: flex-start;
+  }
+  &--right {
+    justify-content: flex-end;
+  }
+  &--between {
+    justify-content: space-between;
+  }
+}
+
+// ==============================
+// Box
+// ==============================
+.btnBox {
+  .btn {
+    margin: 0 .5rem;
+  }
+}
+
+// ==============================
+// Group
+// ==============================
+.btnGroup {
+  padding: 0;
+  border-color: $color-blod_border;
+  border: 1px solid $color-blod_border;
+  border-radius: $radius;
+
+  &, .btn, .btn:hover:not(.is--disabled) {
+    background-color: transparent;
+  }
+  .btn {
+    background-color: transparent;
+    border: 0;
+    border-right: 1px solid $color-blod_border;
+    border-radius: 0;
+    color: $color-info;
+    transition: all 50ms;
+    &.curr {
+      border: 0;
+      box-shadow: 0 0 0 1px $color-brand-10;
+    }
+    &:first-child {
+      border-radius: $radius 0 0 $radius;
+    }
+    &:last-child {
+      border-right: 0;
+      border-radius: 0 $radius $radius 0;
+    }
+  }
+}

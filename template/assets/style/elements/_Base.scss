@@ -1,12 +1,19 @@
 /* Base
  ––––––––––––––––––––––––––––––––––––––––––––––––––
- The base font-size is set at 62.5% for having the convenience
+ 部分設定參考自 https://github.com/milligram/ v1.3.0
+ –––––––––––––––––––––––––––––––––––––––––––––––––– */
+// Set box-sizing globally to handle padding and border widths
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+/* The base font-size is set at 62.5% for having the convenience
  of sizing rems in a way that is similar to using px. 1.8rem=18px
  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
 html {
 	box-sizing: border-box;
-	height: 100%;
 	font-size: 62.5%;
 	/* 防止 iOS 方向變化後的文字大小調整，​​禁止用戶縮放。 */
 	// text-size-adjust: 100%;
@@ -16,8 +23,8 @@ body {
 	background-color: $color-init;
 	min-height: 100%;
   color: $color-font;
-	font-family: $font-init;
-  font-size: $size-font-init;
+	font-family: $font-family-init;
+  font-size: $font-size-init;
   font-weight: 300;
   letter-spacing: .01em;
   line-height: 1.6;
@@ -33,13 +40,6 @@ body {
 }
 
 
-// Box Sizing FTW
-*,
-*:after,
-*:before {
-  box-sizing: inherit;
-}
-
 //::-moz-selection{background: $selectionBg; color: $selectionText; text-shadow: none;}
 //::selection{background: $selectionBg; color: $selectionText; text-shadow: none;}
 
@@ -52,12 +52,12 @@ svg:not(:root) { overflow: hidden; }
 
 /* js 停用警告
 -------------------------------------------------------------*/
-.notifyBox{position: relative; background: #fdf2a5; background: linear-gradient(#fef9d7, #fcea73);
-	padding: 1rem 1.5rem;
-	text-align: left;
-	&__title {margin-bottom: .5rem; color: #555; font-size: 2.4rem;}
-	&__content {color: #8a6d3b; font-size: 1.4rem;}
-}
+// .notifyBox{position: relative; background: #fdf2a5; background: linear-gradient(#fef9d7, #fcea73);
+// 	padding: 1rem 1.5rem;
+// 	text-align: left;
+// 	&__title {margin-bottom: .5rem; color: #555; font-size: 2.4rem;}
+// 	&__content {color: #8a6d3b; font-size: 1.4rem;}
+// }
 
 
 /* old-browser-warning
@@ -67,7 +67,7 @@ svg:not(:root) { overflow: hidden; }
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 99;
+	z-index: 9999;
 	@include size(100%, 100%);
 
 	&__inner {

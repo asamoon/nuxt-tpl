@@ -1,29 +1,32 @@
 <template>
-    <span class="avater img-box" :style="style">
-      <img :src="`https://api.adorable.io/avatars/${size}/${userName}`" role="img" :alt="userName" :style="imgRadius" />
-      <!-- v-if="!this.src" -->
-    </span>
-  <!-- ======================== Avater end ======================== -->
+  <div class="avater" :style="style" @click="handleClick">
+    <figure>
+      <img v-if="src" itemprop="image" role="img" v-lazy="src" :alt="name">
+      <img v-else itemprop="image" role="img" v-lazy="`https://api.adorable.io/avatars/${size}/${name}`" :alt="name">
+    </figure>
+  </div><!-- ======================== Avater end ======================== -->
 </template>
 
 <script>
+import Icon from '~/components/mui/Icon'
+
 export default {
   name: 'mui-avater',
+  components: {
+    Icon
+  },
   props: {
-    // userID: {
-    //   type: String,
-    //   required: true
-    // },
-    userName: {
+    name: {
       type: String,
+      default: 'guest',
       required: true
     },
     src: {
-      type: Number
+      type: String
     },
     size: {
       type: Number,
-      default: 50
+      default: 48
     },
     rounded: {
       type: Boolean,
@@ -33,34 +36,46 @@ export default {
   computed: {
     style () {
       const style = {
-        minWidth: this.size + 'px',
-        minHeight: this.size + 'px',
-        borderRadius: (this.rounded) ? '50%' : '.3rem',
-        textAlign: 'center',
-        verticalAlign: 'middle'
-      }
-      return style
-    },
-    imgRadius () {
-      const style = {
+        width: this.size + 'px',
+        height: this.size + 'px',
         borderRadius: (this.rounded) ? '50%' : '.3rem'
       }
       return style
+    }
+  },
+  methods: {
+    handleClick () {
+      this.$emit('click')
     }
   }
 }
 </script>
 
 <style lang="scss">
-.avater{
+@import "~assets/style/import";
+
+.avater {
+  display: inline-block;
+  background-color: $color-dark;
   position: relative;
   overflow: hidden;
+  // background-size: cover;
+  // background-position: center center;
+  // background-repeat: no-repeat;
+  text-align: center;
+  vertical-align: middle;
+  figure {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
   img {
     display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    max-height: 100%;
+    width: auto;
   }
 }
 </style>
