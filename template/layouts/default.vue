@@ -1,33 +1,27 @@
 <template>
   <div class="wrap">
-    <nuxt/>
+    <SiteHeader />
+    <nuxt keep-alive />
     <isIE blockedVersion="11" />
   </div>
 </template>
 
 <script>
-import isIE from '~components/mui/isIE'
+import isIE from '~/components/mui/isIE'
 
 export default {
+  name: 'wrap',
   components: {
     isIE
+  },
+  mounted () {
+    var style
+    if (navigator.userAgent.indexOf('Chrome') !== -1) {
+      style = '50px'
+    } else {
+      style = '20px; margin-left: -7px;'
+    }
+    console.log('%c 歡迎光臨 %c 天空部落 ', `background: #2d5869; padding: 6px 3px; border-radius: 3px 0 0 3px; color: #fff; font-size: 12px; line-height: ${style}`, `background: #58B2DC; padding: 6px 3px; border-radius: 0 3px 3px 0; color: #fff; font-size: 12px; line-height: ${style}`)
   }
 }
 </script>
-
-<style lang="scss">
-html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: border-box;
-  margin: 0;
-}
-</style>

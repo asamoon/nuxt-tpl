@@ -2,8 +2,8 @@
   <div class="error">
     <div class="error__content">
       <div class="error__msg-wrap">
-        <h1 class="error__code">{{ error.statusCode }}</h1>
-        <h2 class="error__msg">{{ error.message }}</h2>
+        <h1 class="error__code"></h1>
+        <h2 class="error__msg"></h2>
       </div>
       <p v-if="error.statusCode === 404"><nuxt-link class="error__link" to="/">Back to the home page</nuxt-link></p>
     </div>
